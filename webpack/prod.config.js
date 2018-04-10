@@ -23,7 +23,6 @@ module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: {
     main: [
-      'bootstrap-loader',
       './src/client.js'
     ]
   },

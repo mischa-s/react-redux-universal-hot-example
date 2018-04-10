@@ -28,7 +28,6 @@ Lines should not exceed 100 characters. This allows the message to be easier to 
  #459  refactor(utils): create url mapper utility function
  #463  chore(webpack): update to isomorphic tools v2
  #494  fix(babel): correct dependencies and polyfills
- #510  feat(app): add react-bootstrap responsive navbar
 ``` 
 
 #### Type

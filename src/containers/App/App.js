@@ -5,11 +5,6 @@ import { withRouter } from 'react-router';
 import { push } from 'react-router-redux';
 import { renderRoutes } from 'react-router-config';
 import { provideHooks } from 'redial';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import Alert from 'react-bootstrap/lib/Alert';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
@@ -85,73 +80,71 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <Helmet {...config.app.head} />
-        <Navbar fixedTop>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <IndexLinkContainer to="/" activeStyle={{ color: '#33e0ff' }} className={styles.title}>
+        <div>
+          <div>
+            <div>
+              <div to="/" activeStyle={{ color: '#33e0ff' }} className={styles.title}>
                 <div className={styles.brand}>
                   <span>{config.app.title}</span>
                 </div>
-              </IndexLinkContainer>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
+              </div>
+            </div>
+            <div />
+          </div>
 
-          <Navbar.Collapse>
-            <Nav navbar>
+          <div>
+            <div>
               {user && (
-                <LinkContainer to="/chat-feathers">
-                  <NavItem>Chat with Feathers</NavItem>
-                </LinkContainer>
+                <div to="/chat-feathers">
+                  <div>Chat with Feathers</div>
+                </div>
               )}
 
-              <LinkContainer to="/chat">
-                <NavItem>Chat</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/widgets">
-                <NavItem>Widgets</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/survey">
-                <NavItem>Survey</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/about">
-                <NavItem>About Us</NavItem>
-              </LinkContainer>
+              <div to="/chat">
+                <div>Chat</div>
+              </div>
+              <div to="/widgets">
+                <div>Widgets</div>
+              </div>
+              <div to="/survey">
+                <div>Survey</div>
+              </div>
+              <div to="/about">
+                <div>About Us</div>
+              </div>
 
               {!user && (
-                <LinkContainer to="/login">
-                  <NavItem>Login</NavItem>
-                </LinkContainer>
+                <div to="/login">
+                  <div>Login</div>
+                </div>
               )}
               {!user && (
-                <LinkContainer to="/register">
-                  <NavItem>Register</NavItem>
-                </LinkContainer>
+                <div to="/register">
+                  <div>Register</div>
+                </div>
               )}
               {user && (
-                <LinkContainer to="/logout">
-                  <NavItem className="logout-link" onClick={this.handleLogout}>
-                    Logout
-                  </NavItem>
-                </LinkContainer>
+                <div to="/logout">
+                  <div className="logout-link">Logout</div>
+                </div>
               )}
-            </Nav>
+            </div>
             {user && (
               <p className="navbar-text">
                 Logged in as <strong>{user.email}</strong>.
               </p>
             )}
-            <Nav navbar pullRight>
-              <NavItem
+            <div>
+              <div
                 target="_blank"
                 title="View on Github"
                 href="https://github.com/bertho-zero/react-redux-universal-hot-example"
               >
                 <i className="fa fa-github" />
-              </NavItem>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className={styles.appContent}>
           {notifs.global && (
@@ -159,7 +152,7 @@ export default class App extends Component {
               <Notifs
                 className={styles.notifs}
                 namespace="global"
-                NotifComponent={props => <Alert bsStyle={props.kind}>{props.message}</Alert>}
+                NotifComponent={props => <div bsStyle={props.kind}>{props.message}</div>}
               />
             </div>
           )}

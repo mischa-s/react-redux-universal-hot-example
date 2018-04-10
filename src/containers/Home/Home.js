@@ -193,12 +193,6 @@ export default class Home extends Component {
               to allow import of stylesheets
             </li>
             <li>
-              <a href="https://github.com/shakacode/bootstrap-sass-loader" target="_blank" rel="noopener noreferrer">
-                bootstrap-sass-loader
-              </a>{' '}
-              to customize Bootstrap
-            </li>
-            <li>
               <a href="https://github.com/FortAwesome/Font-Awesome" target="_blank" rel="noopener noreferrer">
                 font-awesome
               </a>
